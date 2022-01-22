@@ -8,7 +8,7 @@ module.exports = async (client, userId) => {
   const newClient = {
     nome,
     cpf,
-    dataDeNascimento,
+    dataDeNascimento: new Date(dataDeNascimento),
     dataDeCadastro: new Date(),
     rendaFamiliar,
     userId,

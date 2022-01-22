@@ -2,8 +2,8 @@ const { UNAUTHORIZED } = require('http-status-codes').StatusCodes;
 
 const authService = require('../services/auth');
 
-const WITHOUT_JWT = { message: 'Token not found' };
-const INVALID_JWT = { message: 'Expired or invalid token' };
+const WITHOUT_JWT = { message: 'Token Não encontrado' };
+const INVALID_JWT = { message: 'Token inválido ou expirado' };
 
 module.exports = (req, res, next) => {
   try {
