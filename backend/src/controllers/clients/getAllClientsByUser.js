@@ -5,7 +5,7 @@ const clientServices = require('../../services/clients');
 module.exports = async (req, res, next) => {
   try {
     const { id } = req.user.dataValues;
-    const clients = await clientServices.getAllClients(id);
+    const clients = await clientServices.getAllClientsByUser(id);
 
     return res.status(OK).send(clients);
   } catch (error) {

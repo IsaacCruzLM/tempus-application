@@ -7,8 +7,7 @@
     "prestart": "npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all",
     "start": "node ./src/api",
     "drop": "npx sequelize-cli db:drop",
-    "test": "jest --runInBand",
-    "test-coverage": "jest --runInBand --coverage"
+    "test": "jest --runInBand"
   },
   "keywords": [],
   "author": "",

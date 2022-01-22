@@ -7,7 +7,7 @@ const router = express.Router({ mergeParams: true });
 
 router.post('/', auth, clientValidate, cpfValidate, require('./registerClient'));
 router.get('/:id', auth, require('./getClientById'));
-router.get('/', auth, require('./getAllClients'));
+router.get('/', auth, require('./getAllClientsByUser'));
 router.put('/:clientId', auth, clientValidate, require('./updateClientById'));
 router.delete('/:clientId', auth, require('./deleteClientById'));
 
