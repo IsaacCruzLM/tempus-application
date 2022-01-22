@@ -8,9 +8,11 @@ module.exports = async ({ nome, dataDeNascimento, rendaFamiliar }, id, userId) =
 
   await client.update({ nome, dataDeNascimento, rendaFamiliar });
 
-  return client.findByPk(id, {
+  const clientUpdated = await Client.findByPk(id, {
     include: [
       { model: User, as: 'user', attributes: { exclude: ['password'] } },
     ],
   });
+
+  return clientUpdated;
 };

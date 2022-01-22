@@ -8,6 +8,6 @@ module.exports = {
   registerClient: (client, userId) => registerClientFunction(client, userId),
   getAllClients: () => getAllClientsFunction(),
   getClientById: (id) => getClientByIdFunction(id),
-  updateClientById: (info, id, userId) => updateClientByIdFunction(info, id, userId),
+  updateClientById: (update, id, userId) => updateClientByIdFunction(update, id, userId),
   deleteClientById: (id, userId) => deleteClientByIdFunction(id, userId),
 };

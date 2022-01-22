@@ -8,4 +8,6 @@ app.use(express.json());
 
 app.use(require('../controllers/root'));
 
+app.use(require('../middlewares/error'));
+
 app.listen(3001, () => console.log('ouvindo porta 3001!'));

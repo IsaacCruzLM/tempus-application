@@ -12,7 +12,7 @@ module.exports = async (req, res, next) => {
       nome, cpf, dataDeNascimento, rendaFamiliar,
     } = req.body;
 
-    const response = await clientServices.updateClientById(
+    const client = await clientServices.updateClientById(
       {
         nome, cpf, dataDeNascimento, rendaFamiliar,
       },
@@ -20,9 +20,9 @@ module.exports = async (req, res, next) => {
       id,
     );
 
-    if (!response) return res.status(BAD_REQUEST).send(UPDATE_DENIED);
+    if (!client) return res.status(BAD_REQUEST).send(UPDATE_DENIED);
 
-    return res.status(OK).send(response);
+    return res.status(OK).send(client);
   } catch (error) {
     return next(error);
   }

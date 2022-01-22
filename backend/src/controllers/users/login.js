@@ -3,7 +3,7 @@ const { BAD_REQUEST, OK } = require('http-status-codes').StatusCodes;
 const userServices = require('../../services/users');
 
 const INVALID_FIELDS = {
-  message: 'Invalid fields',
+  message: 'Email ou senha inválida',
 };
 
 module.exports = async (req, res, next) => {

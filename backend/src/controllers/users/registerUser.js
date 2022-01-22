@@ -8,7 +8,7 @@ module.exports = async (req, res, next) => {
     const token = await userServices.registerUser(nome, email, password);
 
     return res.status(CREATED).send({ token });
-  } catch (err) {
-    return next(err);
+  } catch (error) {
+    return next(error);
   }
 };

@@ -16,7 +16,7 @@ module.exports = async (req, res, next) => {
       id,
     );
 
-    return res.status(CREATED).send(response.blogPost);
+    return res.status(CREATED).send(response.clientSaved);
   } catch (error) {
     return next(error);
   }

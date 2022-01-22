@@ -8,15 +8,15 @@ const validateEmail = (email) => {
 };
 
 const EMAIL_ALREAD_EXISTS = {
-  message: 'User already registered',
+  message: 'Usuário já registrado',
 };
 
 const EMAIL_INVALID = {
-  message: '"email" must be a valid email',
+  message: 'Por favor, insira um "email" válido',
 };
 
 const EMAIL_REQUIRED = {
-  message: '"email" is required',
+  message: '"email" é necessário',
 };
 
 module.exports = async (req, res, next) => {
@@ -26,8 +26,8 @@ module.exports = async (req, res, next) => {
     const users = await User.findAll();
     const emails = users.map((user) => user.email);
 
-    if (emails.includes(email)) return res.status(CONFLICT).send(EMAIL_ALREAD_EXISTS);
     if (!email) return res.status(BAD_REQUEST).send(EMAIL_REQUIRED);
+    if (emails.includes(email)) return res.status(CONFLICT).send(EMAIL_ALREAD_EXISTS);
     if (!validateEmail(email)) return res.status(BAD_REQUEST).send(EMAIL_INVALID);
 
     return next();

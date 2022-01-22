@@ -8,7 +8,7 @@ module.exports = async (email, password) => {
 
   const { password: _password, ...userWithoutPassword } = userFound;
 
-  const token = authService.genToken(userWithoutPassword);
+  const token = authService.generateToken(userWithoutPassword);
 
   return token;
 };

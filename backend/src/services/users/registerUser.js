@@ -12,7 +12,7 @@ module.exports = async (nome, email, password) => {
 
   const { password: _password, ...userWithoutPassword } = newUser;
 
-  const token = authService.genToken(userWithoutPassword);
+  const token = authService.generateToken(userWithoutPassword);
 
   return token;
 };

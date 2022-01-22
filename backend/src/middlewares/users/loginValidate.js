@@ -1,19 +1,19 @@
 const { BAD_REQUEST } = require('http-status-codes').StatusCodes;
 
 const PASSWORD_INVALID = {
-  message: '"password" is not allowed to be empty',
+  message: '"password" não pode ser vazio',
 };
 
 const PASSWORD_REQUIRED = {
-  message: '"password" is required',
+  message: '"password" é necesssário',
 };
 
 const EMAIL_INVALID = {
-  message: '"email" is not allowed to be empty',
+  message: '"email" não pode ser vazio',
 };
 
 const EMAIL_REQUIRED = {
-  message: '"email" is required',
+  message: '"email" é necesssário',
 };
 
 module.exports = async (req, res, next) => {
