@@ -1,11 +1,11 @@
 const { BAD_REQUEST } = require('http-status-codes').StatusCodes;
 
 const NOME_REQUIRED = {
-  message: '"nome" é necessário',
+  message: 'O campo "nome" é necessário',
 };
 
 const PASSWORD_REQUIRED = {
-  message: '"password" é necessário',
+  message: 'O campo "password" é necessário',
 };
 
 module.exports = async (req, res, next) => {

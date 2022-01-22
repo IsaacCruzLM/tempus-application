@@ -16,7 +16,7 @@ const EMAIL_INVALID = {
 };
 
 const EMAIL_REQUIRED = {
-  message: '"email" é necessário',
+  message: 'O campo "email" é necessário',
 };
 
 module.exports = async (req, res, next) => {

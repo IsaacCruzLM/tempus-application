@@ -5,7 +5,7 @@ const loginValidate = require('../../middlewares/users/loginValidate');
 
 const router = express.Router({ mergeParams: true });
 
-router.post('/', emailValidation, userValidation, require('./registerUser'));
+router.post('/', userValidation, emailValidation, require('./registerUser'));
 router.post('/login', loginValidate, require('./login'));
 
 module.exports = router;

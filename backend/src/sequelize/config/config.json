@@ -2,14 +2,14 @@
   "development": {
     "username": "isaac",
     "password": "isaacclm7991",
-    "database": "tempus_development",
+    "database": "tempus_database",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "isaac",
     "password": "isaacclm7991",
-    "database": "tempus_test",
+    "database": "tempus_database",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
