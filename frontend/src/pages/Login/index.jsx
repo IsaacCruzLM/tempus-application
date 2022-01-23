@@ -1,10 +1,14 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
+
+import EmailInput from '../../components/EmailInput';
+import PasswordInput from '../../components/PasswordInput';
+
 import {
-  Container, Form, Title, InputContainer, Input, Button, Label, SpanError,
+  Container, Form, Title, Button,
 } from './styles';
 
-function Main() {
+function Login() {
   return (
     <Container className="Container">
       <Form action="" method="GET">
@@ -12,21 +16,9 @@ function Main() {
           Login
         </Title>
 
-        <InputContainer>
-          <Label htmlFor="user">
-            Email
-            <Input required type="email" id="user" />
-          </Label>
-          <SpanError className="error" />
-        </InputContainer>
+        <EmailInput label="Email" name="email" />
 
-        <InputContainer>
-          <Label htmlFor="email">
-            Password
-            <Input required type="password" id="email" />
-          </Label>
-          <SpanError className="error" />
-        </InputContainer>
+        <PasswordInput label="Senha" name="password" />
 
         <Button type="submit">Entrar</Button>
       </Form>
@@ -34,4 +26,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default Login;

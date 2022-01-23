@@ -1,10 +1,14 @@
 import React from 'react';
 
+import EmailInput from '../../components/EmailInput';
+import PasswordInput from '../../components/PasswordInput';
+import TextInput from '../../components/TextInput/index';
+
 import {
-  Container, Form, Title, InputContainer, Input, Button, Label,
+  Container, Form, Title, Button,
 } from './styles';
 
-function Main() {
+function Register() {
   return (
     <Container className="Container">
       <Form action="" method="GET">
@@ -12,26 +16,11 @@ function Main() {
           Registrar
         </Title>
 
-        <InputContainer>
-          <Label htmlFor="user">
-            Insira seu Nome
-            <Input required type="text" name="nome" />
-          </Label>
-        </InputContainer>
+        <TextInput label="Insira seu Nome" name="nome" />
 
-        <InputContainer>
-          <Label htmlFor="user">
-            Insira seu Email
-            <Input required type="email" name="email" />
-          </Label>
-        </InputContainer>
+        <EmailInput label="Insira seu Email" name="email" />
 
-        <InputContainer>
-          <Label htmlFor="password">
-            Insira sua Senha
-            <Input required type="password" name="password" />
-          </Label>
-        </InputContainer>
+        <PasswordInput label="Insira sua Senha" name="password" />
 
         <Button type="submit">Registrar</Button>
       </Form>
@@ -39,4 +28,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default Register;

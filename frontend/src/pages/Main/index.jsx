@@ -1,25 +1,30 @@
-import React, { useEffect, useState } from 'react';
-// import { useParams } from 'react-router-dom';
+import React from 'react';
 
-import fetchPokemons from '../../services/api';
+import Header from '../../components/Header';
+import DataTable from '../../components/DataTable';
 
 import Container from './styles';
 
+const data = [
+  {
+    id: '1', nome: 'Isaac', cpf: 1231231231, dataDeNascimento: '1987-20-01', dataDeCadastro: '2021-20-01', rendaFamiliar: 200,
+  },
+  {
+    id: '2', nome: 'Isaac 2', cpf: 1231231231, dataDeNascimento: '1987-20-01', dataDeCadastro: '2021-20-01', rendaFamiliar: 2000,
+  },
+  {
+    id: '3', nome: 'Isaac 3', cpf: 1231231231, dataDeNascimento: '1987-20-01', dataDeCadastro: '2021-20-01', rendaFamiliar: 2600,
+  },
+  {
+    id: '4', nome: 'Isaac 4', cpf: 1231231231, dataDeNascimento: '1987-20-01', dataDeCadastro: '2021-20-01', rendaFamiliar: 200,
+  },
+];
+
 function Main() {
-  const [pokemons, setpokemons] = useState([]);
-  // const { id } = useParams();
-
-  useEffect(() => {
-    // eslint-disable-next-line no-shadow
-    const pokemons = async () => {
-      setpokemons((await fetchPokemons()).results);
-    };
-    pokemons();
-  }, []);
-
   return (
-    <Container className="Container">
-      { pokemons.map((pokemon) => (<h1>{pokemon.name}</h1>))}
+    <Container>
+      <Header />
+      <DataTable clients={data} />
     </Container>
   );
 }
