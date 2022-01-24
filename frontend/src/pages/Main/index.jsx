@@ -1,25 +1,41 @@
-import React, { useEffect, useState } from 'react';
-// import { useParams } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Redirect } from 'react-router';
 
-import fetchPokemons from '../../services/api';
+import api from '../../services/api';
+import Header from '../../components/Header';
+import DataTable from '../../components/DataTable';
+import Loading from '../../components/Loading';
 
 import Container from './styles';
 
 function Main() {
-  const [pokemons, setpokemons] = useState([]);
-  // const { id } = useParams();
+  const [loading, setLoading] = useState(true);
+  const [redirectToLogin, setRedirectToLogin] = useState(false);
+  const [dataClients, setDataClients] = useState([]);
 
-  useEffect(() => {
-    // eslint-disable-next-line no-shadow
-    const pokemons = async () => {
-      setpokemons((await fetchPokemons()).results);
-    };
-    pokemons();
+  useEffect(async () => {
+    setLoading(true);
+    const token = JSON.parse(localStorage.getItem('authorization'));
+    const clients = await api.getAllClientsByUser(token);
+
+    if (!clients.message) {
+      setDataClients(clients);
+      setRedirectToLogin(false);
+      setLoading(false);
+    } else {
+      alert(clients.message);
+      setRedirectToLogin(true);
+    }
   }, []);
 
+  if (redirectToLogin) return <Redirect to="/" />;
+
+  if (loading) return <Loading />;
+
   return (
-    <Container className="Container">
-      { pokemons.map((pokemon) => (<h1>{pokemon.name}</h1>))}
+    <Container>
+      <Header />
+      <DataTable clients={dataClients} />
     </Container>
   );
 }
