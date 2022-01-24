@@ -25,7 +25,7 @@ Tabela de conteúdos
 
 ## 💻 Sobre o projeto
 
-Tempus Digital Application - É uma aplicação com a finalidade de criação e logins para usuários e CRUD de clientes, com a possibilidade da geração de relátorios sobre a base de dados de clientes.
+Tempus Digital Application - É uma aplicação com a finalidade de criação e logins para usuários e CRUD de clientes, com a possibilidade da geração de relatórios sobre a base de dados de clientes.
 
 ---
 
@@ -55,11 +55,11 @@ Este projeto é divido em três partes:
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
 [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/) e [MySQL Server](https://dev.mysql.com/downloads/mysql/). 
-Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
+Além disto é bom ter um editor para trabalhar com o código, como [VSCode](https://code.visualstudio.com/)
 
 ### Configurando Variáveis de Ambiente
 
-Primeiramente, você deve configurar suas variáves de ambiente, no arquivo [.env](https://github.com/IsaacCruzLM/tempus-application/blob/main/backend/.env), com o seu usuário de acesso ao servidor root do MySQL de sua máquina e sua senhan de acesso.
+Primeiramente, você deve configurar suas variáves de ambiente, no arquivo [.env](https://github.com/IsaacCruzLM/tempus-application/blob/main/backend/.env), com o seu usuário de acesso ao servidor root do MySQL de sua máquina e sua senha de acesso.
 
 OBS: O arquivo .env foi enviado ao repositório remoto a fim de facilitar a utilização da aplicação, juntamente com uma senha fictícia do JWT.
 
