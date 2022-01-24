@@ -93,7 +93,7 @@ $ npm start
 
 Como não foi implementado a criação de novos usários, para a utilização da aplicação deve-se utilizar o login a seguir:
 
-emai: admin@gmail.com
+email: admin@gmail.com
 
 password: admin123
 
