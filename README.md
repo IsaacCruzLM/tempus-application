@@ -25,7 +25,7 @@ Tabela de conteúdos
 
 ## 💻 Sobre o projeto
 
-Tempus Digital Application - É uma aplicação com a finalidade de criação e logins para usuários e CRUD para clientes, com a possibilidade da geração de relátorios sobre a base de dados de clientes.
+Tempus Digital Application - É uma aplicação com a finalidade de criação e logins para usuários e CRUD de clientes, com a possibilidade da geração de relátorios sobre a base de dados de clientes.
 
 ---
 
