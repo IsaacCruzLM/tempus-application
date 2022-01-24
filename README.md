@@ -16,7 +16,8 @@ Tabela de conteúdos
          * [Aqui você encontrará as informações para efetuar o login!]
      * [Rodando os Testes](#-rodando-os-testes)
    * [Tecnologias](#-tecnologias)
-     * [Server](#server)
+     * [BackEnd](#backend)
+     * [FrontEnd](#frontend)
    * [Como contribuir no projeto](#-como-contribuir-no-projeto)
    * [Autor](#-autor)
    * [Licença](#-licença)
