@@ -10,7 +10,7 @@ module.exports = async (req, res, next) => {
   try {
     const { cpf } = req.body;
 
-    const currentCPFs = (await clientServices.getAllClients()).map((client) => client.cpf);
+    const currentCPFs = (await clientServices.getClients()).map((client) => client.cpf);
 
     const cpfAlreadyExists = currentCPFs.includes(cpf);
 
