@@ -115,10 +115,10 @@ function DataTable({ clients }) {
         contentLabel="Cadastrar Novo Cliente"
       >
         <ModalHeader>
-          <h2>Cadastrar Novo Cliente</h2>
+          <h2>Editar Cliente</h2>
           <button type="button" onClick={closeModal}>Close</button>
         </ModalHeader>
-        <ModalSubtitle>Insira as Informações do Novo Cliente</ModalSubtitle>
+        <ModalSubtitle>Insira as informações que deseja alterar</ModalSubtitle>
         <ModalForm ref={form} onSubmit={editClient}>
           <input type="text" required maxLength="150" placeholder="Nome" />
           <input type="number" maxLength="10" placeholder="CPF" />
