@@ -1,30 +1,41 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { Redirect } from 'react-router';
 
+import api from '../../services/api';
 import Header from '../../components/Header';
 import DataTable from '../../components/DataTable';
+import Loading from '../../components/Loading';
 
 import Container from './styles';
 
-const data = [
-  {
-    id: '1', nome: 'Isaac', cpf: 1231231231, dataDeNascimento: '1987-20-01', dataDeCadastro: '2021-20-01', rendaFamiliar: 200,
-  },
-  {
-    id: '2', nome: 'Isaac 2', cpf: 1231231231, dataDeNascimento: '1987-20-01', dataDeCadastro: '2021-20-01', rendaFamiliar: 2000,
-  },
-  {
-    id: '3', nome: 'Isaac 3', cpf: 1231231231, dataDeNascimento: '1987-20-01', dataDeCadastro: '2021-20-01', rendaFamiliar: 2600,
-  },
-  {
-    id: '4', nome: 'Isaac 4', cpf: 1231231231, dataDeNascimento: '1987-20-01', dataDeCadastro: '2021-20-01', rendaFamiliar: 200,
-  },
-];
-
 function Main() {
+  const [loading, setLoading] = useState(true);
+  const [redirectToLogin, setRedirectToLogin] = useState(false);
+  const [dataClients, setDataClients] = useState([]);
+
+  useEffect(async () => {
+    setLoading(true);
+    const token = JSON.parse(localStorage.getItem('authorization'));
+    const clients = await api.getAllClientsByUser(token);
+
+    if (!clients.message) {
+      setDataClients(clients);
+      setRedirectToLogin(false);
+      setLoading(false);
+    } else {
+      alert(clients.message);
+      setRedirectToLogin(true);
+    }
+  }, []);
+
+  if (redirectToLogin) return <Redirect to="/" />;
+
+  if (loading) return <Loading />;
+
   return (
     <Container>
       <Header />
-      <DataTable clients={data} />
+      <DataTable clients={dataClients} />
     </Container>
   );
 }
