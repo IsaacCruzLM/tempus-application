@@ -89,11 +89,12 @@ $ npm start
 
 ### 🎲 Rodando o FrontEnd
 
-!!!!!!!!! IMPORTAMTE !!!!!!!!!
+!!!!!!!!! IMPORTANTE !!!!!!!!!
 
-Como não foi implementado a criação de novos usários, para a utilização da aplicação deve-se utilizar o logion a seguir:
+Como não foi implementado a criação de novos usários, para a utilização da aplicação deve-se utilizar o login a seguir:
 
 emai: admin@gmail.com
+
 password: admin123
 
 ```bash
